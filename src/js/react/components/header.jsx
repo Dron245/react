@@ -1,8 +1,9 @@
 import React from "react";
+import { useState } from "react";
 
-
-const now = new Date()
 const Header = () => {
+	const [now, setNow] = useState(new Date())
+	setInterval(() => setNow(new Date()), 1000)
 	return (
 	<header>
 		<h1>Шапка</h1>

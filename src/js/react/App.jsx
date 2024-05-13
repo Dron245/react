@@ -2,9 +2,15 @@ import React from "react";
 import Header from "./components/header.jsx"
 import WayToTeach from "./components/WayToTeach.jsx"
 import Button from "./components/Button/Button.jsx"
-import {ways} from "./data";
+import { useState } from "react";
+import {ways, differences} from "./data";
+import Quanity from "./components/quantity/quantity.jsx";
 
 const App = () => {
+	const [contentType, setContentType ] = useState(null)
+	function handleClick(contentType) {
+		setContentType(contentType)
+	}
 	return (
 		<div>
 			<Header/>
@@ -19,9 +25,16 @@ const App = () => {
 					</ul>
 				</section>
 				<section>
-					<Button>Привет</Button>
-					<Button>Как</Button>
-					<Button>Дела ?</Button>
+					<Button onclick={() => handleClick("way")}>Привет</Button>
+					<Button onclick={() => handleClick("easy")}>Как</Button>
+					<Button onclick={() => handleClick("program")}>Дела ?</Button>
+
+					{/* {contentType ? <p>{differences[contentType]}</p> : <p>Нажми на кнопку</p>} */}
+					{!contentType && <p>Нажми на кнопку</p>}
+					{contentType && <p>{differences[contentType]}</p>}
+				</section>
+				<section>
+					<Quanity />
 				</section>
 			</main>
 		</div>
