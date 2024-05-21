@@ -13,11 +13,13 @@ const Quanity = () => {
 	}
 	
 	return (
-		<div>
-			<p className="qua">{contentType}</p>
-			<button onClick={changeminusQuantity} className="button minus"> - </button>
-			<button onClick={changeplusQuantity} className="button plus"> + </button>
-		</div>
+		<section>
+			<div>
+				<p className="qua">{contentType}</p>
+				<button onClick={changeminusQuantity} className="button minus"> - </button>
+				<button onClick={changeplusQuantity} className="button plus"> + </button>
+			</div>
+		</section>
 	)
 }
 

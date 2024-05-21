@@ -6,7 +6,7 @@ const Header = () => {
 	setInterval(() => setNow(new Date()), 1000)
 	return (
 	<header>
-		<h1>Шапка</h1>
+		<h1>Лого</h1>
 		<span>Время сейчас: { now.toLocaleTimeString() }</span>
 	</header>
 	

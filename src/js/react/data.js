@@ -19,6 +19,11 @@ export const ways = [
     description:
       'VK, Avito, Тинькофф, Kaspersky — действующие разработчики с опытом преподавания для большой аудитории.',
   },
+  {
+    title: "ksdnf skdjfnskdjfn",
+    description:
+      'df sldkm lsdkm sldkmf lsdkmfsldkfmsdlkm lsdkmsd lkm sdkm sldkfmsd flsdkfmsdlfksdmf sld',
+  },
 ]
 
 export const differences = {
