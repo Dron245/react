@@ -1,6 +1,6 @@
 import React from "react"
 import TabsSectionTwo from "./TabsSectionTwo.jsx"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import VOne from "./VOne.jsx"
 import VTwo from "./VTwo.jsx"
 import Button from "./Button/Button.jsx"
@@ -32,9 +32,7 @@ export default function FeedBackSection () {
 
 					<select value={form.reason} 
 						onChange={(event) =>
-						setForm((prev) => ({...prev, 
-							reason:event.target.value.trim().length == 0
-						}))
+						setForm((prev) => ({...prev, reason:event.target.value}))
 						}
 					>
 						<option value="error">ошибка</option>
