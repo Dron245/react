@@ -6,9 +6,10 @@ import Buttons from "./components/Buttons.jsx";
 import Quanity from "./components/quantity/quantity.jsx";
 import TabsSection from "./components/TabsSection.jsx";
 import FeedBackSection from "./components/feedBackSection.jsx";
+import EffectsSection from "./components/EffectsSection.jsx";
 
 const App = () => {
-	const [tab, setTab] = useState('feedback')
+	const [tab, setTab] = useState('Effect')
 	return (
 		<>
 			<Header/>
@@ -25,6 +26,12 @@ const App = () => {
 					<>
 						<FeedBackSection/>
 						<Quanity />
+					</>
+				)}
+
+				{tab == "Effect" && (
+					<>
+						<EffectsSection/>
 					</>
 				)}
 			</main>

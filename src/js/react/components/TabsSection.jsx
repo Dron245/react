@@ -12,6 +12,10 @@ export default function TabsSection ({active, onChange}) {
 			 onclick={() => onChange('feedback')}
 			 >Обратная связь
 			 </Button>
+			<Button isActive={active == 'Effect'}
+			 onclick={() => onChange('Effect')}
+			 >Effects
+			 </Button>
 		</section>
 	)
 }
