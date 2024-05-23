@@ -7,28 +7,33 @@ import Button from "./Button/Button.jsx"
 export default function FeedBackSection () {
 
 	const [form, setForm] = useState({
-		name:'',
+		// name:'',
 		// tab:'two',
 		error:false,
 		reason:'suggest'
 	})
 	const [tab, setTab] = useState('two')
+	const input = useRef()
+	const [show, setShow] = useState(false)
+	function changeKey(e) {
+		if(e.key == 'Enter') setShow(true)
+	}
 	return (
 		<>
 			<section >
 				<h3>Обратная связь</h3>
 				<form className="form" action="#">
+					<h3 >Ваше имя: {show && input.current.value}</h3>
 					<label htmlFor="name">Ваше имя</label>
-					<input value={form.name} id="name" type="text"
-					style={{border: form.error ? '1px solid red' : null}}
-					 onChange={(event) =>
-						// {
-							setForm((prev) =>({...prev,
-								name: event.target.value,
-								error: event.target.value.trim().length == 0
-							}))
-						// }
-					} />
+					<input ref={input} value={form.name} id="name"
+						onKeyDown={changeKey}
+						style={{border: form.error ? '1px solid red' : null}}
+						// onChange={(event) =>
+						// 	setForm((prev) =>({...prev,
+						// 		name: event.target.value,
+						// 		error: event.target.value.trim().length == 0
+						// }))}
+					/>
 
 					<select value={form.reason} 
 						onChange={(event) =>
