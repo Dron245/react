@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {styled} from 'styled-components'
 
 const HeaderComponents = styled.header`
@@ -13,7 +13,13 @@ const HeaderComponents = styled.header`
 `
 const Header = () => {
 	const [now, setNow] = useState(new Date())
-	setInterval(() => setNow(new Date()), 1000)
+	useEffect(() => {
+		const interval = setInterval(() => setNow(new Date()), 1000)
+		return () => {
+			clearInterval(interval)
+			console.log(1)
+		}
+	}, [])
 	return (
 	<HeaderComponents>
 		<h1>Лого</h1>
