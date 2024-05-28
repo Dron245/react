@@ -17,7 +17,6 @@ const Header = () => {
 		const interval = setInterval(() => setNow(new Date()), 1000)
 		return () => {
 			clearInterval(interval)
-			console.log(1)
 		}
 	}, [])
 	return (

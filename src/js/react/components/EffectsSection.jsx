@@ -4,18 +4,20 @@ import Modal from "./Modal/Modal.jsx";
 
 export default function EffectsSection() {
 	const [modal, setModal] = useState(false)
-	const [load, setLoad] = useState(true)
+	const [load, setLoad] = useState(false)
 	const [users, setUsers] = useState([])
 
 	const qwe = useCallback(async () => {
-			const response = await fetch('https://jsonplaceholder.typicode.com/users')
-			const users = await response.json()
-			setUsers(users)
+		setLoad(true)
+		const response = await fetch('https://jsonplaceholder.typicode.com/users')
+		const users = await response.json()
+		setUsers(users)
+		setLoad(false)
 	}, [])
 
 	useEffect(() => {
 		qwe()
-	}, [])
+	}, [qwe])
 	return (
 		<section>
 			<h3>Effect</h3>
