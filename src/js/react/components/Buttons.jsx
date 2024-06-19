@@ -7,6 +7,7 @@ import Button from "../components/Button/Button.jsx"
 export default function Buttons() {
 	let [contentType, setContentType ] = useState(null)
 	function handleClick(contentType) {
+		console.log(contentType, typeof(contentType));
 		setContentType(contentType)
 	}
 	return (

@@ -10,10 +10,7 @@ import EffectsSection from "./components/EffectsSection.jsx";
 
 const App = () => {
 	const [tab, setTab] = useState('Effect')
-	// const [vis, setvis] = useState(true)
-	// setTimeout(() => {
-	// 	setvis(false)
-	// }, 3000);
+	
 	return (
 		<>
 			<Header/>
@@ -49,8 +46,8 @@ const root = document.querySelector("#root")
 
 // Main rendering
 ReactDOM.createRoot(root).render(
-	<React.StrictMode>
+	// <React.StrictMode>
 		<App />
-	</React.StrictMode>
+	// </React.StrictMode>
 );
 
